@@ -1,0 +1,25 @@
+{
+    "name": "autocar/laravel-log-manager",
+    "description": "Log manager for Laravel 5",
+    "licence": "MIT",
+    "keywords": ["log", "log-manager", "log-viewer", "logging"],
+    "authors": [
+        {
+            "name": "Selim Ertürk",
+            "email": "hizmetler@msn.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "5.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/controllers"
+        ],
+        "psr-0": {
+            "autocar\\LaravelLogManager\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
