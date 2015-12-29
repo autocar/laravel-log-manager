@@ -8,11 +8,11 @@ class LogManagerController extends \Illuminate\Routing\Controller
 
     public function index()
     {
-        if (\Input::get('l')) {
-            LaravelLogManager::setFile(base64_decode(\Input::get('l')));
+        if (\Request::get('l')) {
+            LaravelLogManager::setFile(base64_decode(\Request::get('l')));
         }
-        if (\Input::get('d')) {
-            $log_file = glob(storage_path().'/logs'.'/'.base64_decode(\Input::get('d')));
+        if (\Request::get('d')) {
+            $log_file = glob(storage_path().'/logs'.'/'.base64_decode(\Request::get('d')));
             \File::delete($log_file);
             return redirect()->to('logs');
         }
