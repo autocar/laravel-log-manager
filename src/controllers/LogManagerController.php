@@ -14,7 +14,7 @@ class LogManagerController extends \Illuminate\Routing\Controller
         if (\Request::get('d')) {
             $log_file = glob(storage_path().'/logs'.'/'.base64_decode(\Request::get('d')));
             \File::delete($log_file);
-            return redirect()->to('logs');
+            return redirect()->back();
         }
         $logs = LaravelLogManager::all();
         View::addNamespace('laravel-log-manager', __DIR__.'/../views');
