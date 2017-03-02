@@ -28,10 +28,13 @@ class LaravelLogManagerServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app['logmanager'] = $this->app->share(function($app)
-        {
-            return new LaravelLogManager;
-        });
+		/*$this->app['logmanager'] = $this->app->share(function($app)
+        	{
+            		return new LaravelLogManager;
+        	});*/
+		$this->app->singleton('logmanager', function () {
+            		return $this->app->make('autocar\LaravelLogManager\LaravelLogManager');
+        	});
 	}
 
 	/**
